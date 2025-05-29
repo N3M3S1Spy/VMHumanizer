@@ -12,8 +12,6 @@ std::wstring getUserPath() {
     HRESULT hr = SHGetKnownFolderPath(FOLDERID_Profile, 0, NULL, &path);
 
     if (SUCCEEDED(hr)) {
-        std::wcout << L"Home folder: " << path << std::endl;
-
         std::wstring userPath = path;
         
         CoTaskMemFree(path);
@@ -54,7 +52,15 @@ void downloadImages(const std::wstring path) {
     for (size_t i = 0; i < imageUrls.size(); ++i) {
         std::wstring filename = path + L"\\Desktop\\" + std::to_wstring(i) + L".jpg";
         HRESULT hr = URLDownloadToFileW(NULL, imageUrls[i].c_str(), filename.c_str(), 0, NULL);
+        if (hr == S_OK) {
+            std::wcout << L"Starte Download: " << imageUrls[i].c_str() << std::endl;
+        } 
+        else
+        {
+            std::wcout << L"Fehler beim herunterladen vom Bild: " << imageUrls[i].c_str() << std::endl;
+        }
     }
+
 
     std::vector<std::wstring> excelFiles = {
     L"https://mmbb.law/wp-content/uploads/Digital-Assets-Worksheet-Password-List.xlsx",
@@ -105,9 +111,16 @@ void downloadImages(const std::wstring path) {
         }
         else 
         {
-            for (size_t i = 0; i < imageUrls.size(); ++i) {
+            for (size_t i = 0; i < excelFiles.size(); ++i) {
                 std::wstring filename = path + L"\\Desktop\\Tabellen\\" + std::to_wstring(i) + L".xlsx";
-                HRESULT hr = URLDownloadToFileW(NULL, imageUrls[i].c_str(), filename.c_str(), 0, NULL);
+                HRESULT hr = URLDownloadToFileW(NULL, excelFiles[i].c_str(), filename.c_str(), 0, NULL);
+                if (hr == S_OK) {
+                    std::wcout << L"Starte Download: " << excelFiles[i].c_str() << std::endl;
+                }
+                else
+                {
+                    std::wcout << L"Fehler beim herunterladen von Tabelle: " << excelFiles[i].c_str() << std::endl;
+                }
             }
         }
     }
@@ -143,9 +156,16 @@ void downloadImages(const std::wstring path) {
     L"https://insights.sei.cmu.edu/documents/6078/Cybersecurity_Careers_of_the_Future.pdf"
     };
 
-    for (size_t i = 0; i < imageUrls.size(); ++i) {
+    for (size_t i = 0; i < pdfFiles.size(); ++i) {
         std::wstring filename = path + L"\\Desktop\\" + std::to_wstring(i) + L".pdf";
-        HRESULT hr = URLDownloadToFileW(NULL, imageUrls[i].c_str(), filename.c_str(), 0, NULL);
+        HRESULT hr = URLDownloadToFileW(NULL, pdfFiles[i].c_str(), filename.c_str(), 0, NULL);
+        if (hr == S_OK) {
+            std::wcout << L"Starte Download: " << pdfFiles[i].c_str() << std::endl;
+        }
+        else
+        {
+            std::wcout << L"Fehler beim herunterladen von PDF Datei: " << pdfFiles[i].c_str() << std::endl;
+        }
     }
 
     std::vector<std::wstring> wordDocs = {
@@ -165,9 +185,16 @@ void downloadImages(const std::wstring path) {
     L"https://405d.hhs.gov/Documents/405d-cybersecurity-awareness-month-toolkit_R.docx"
     };
 
-    for (size_t i = 0; i < imageUrls.size(); ++i) {
+    for (size_t i = 0; i < wordDocs.size(); ++i) {
         std::wstring filename = path + L"\\Desktop\\" + std::to_wstring(i) + L".docx";
-        HRESULT hr = URLDownloadToFileW(NULL, imageUrls[i].c_str(), filename.c_str(), 0, NULL);
+        HRESULT hr = URLDownloadToFileW(NULL, wordDocs[i].c_str(), filename.c_str(), 0, NULL);
+        if (hr == S_OK) {
+            std::wcout << L"Starte Download: " << wordDocs[i].c_str() << std::endl;
+        }
+        else
+        {
+            std::wcout << L"Fehler beim herunterladen vom Dokument: " << wordDocs[i].c_str() << std::endl;
+        }
     }
 
 }
@@ -175,10 +202,15 @@ void downloadImages(const std::wstring path) {
 
 
 int main() {
+    std::cout << "Starte die Vermenschlichung der VM..." << std::endl;
+
     std::wstring path = getUserPath();
 
+    std::wcout << L"User Path wurde gefunden: " << path << std::endl;
+
+    std::wcout << L"Starte den Download aller Dateien" << std::endl;
     downloadImages(path);
 
-
+    system("pause");
     return 0;
 }
