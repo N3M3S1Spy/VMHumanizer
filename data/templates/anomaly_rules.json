@@ -1,0 +1,136 @@
+{
+  "rules": [
+    {
+      "name": "keystroke_too_fast",
+      "type": "keystroke_timing",
+      "field": "ikd_mean",
+      "operator": "lt",
+      "threshold": 50,
+      "severity": 0.8,
+      "correction": "slow_down",
+      "correction_amount": 50,
+      "description": "Inter-key delay too low, typing unrealistically fast"
+    },
+    {
+      "name": "keystroke_too_slow",
+      "type": "keystroke_timing",
+      "field": "ikd_mean",
+      "operator": "gt",
+      "threshold": 400,
+      "severity": 0.5,
+      "correction": "speed_up",
+      "correction_amount": 30,
+      "description": "Inter-key delay too high, typing unrealistically slow"
+    },
+    {
+      "name": "zero_error_rate",
+      "type": "keystroke_timing",
+      "field": "error_rate",
+      "operator": "lt",
+      "threshold": 0.001,
+      "severity": 0.6,
+      "correction": "vary_parameters",
+      "correction_amount": 0,
+      "description": "Error rate at zero is unrealistic for sustained typing"
+    },
+    {
+      "name": "high_error_rate",
+      "type": "keystroke_timing",
+      "field": "error_rate",
+      "operator": "gt",
+      "threshold": 0.25,
+      "severity": 0.7,
+      "correction": "adjust_timing",
+      "correction_amount": 20,
+      "description": "Error rate too high, exceeds human norms"
+    },
+    {
+      "name": "mouse_too_fast",
+      "type": "mouse_movement",
+      "field": "speed_px_per_sec",
+      "operator": "gt",
+      "threshold": 15000,
+      "severity": 0.9,
+      "correction": "slow_down",
+      "correction_amount": 60,
+      "description": "Mouse movement speed exceeds human capability"
+    },
+    {
+      "name": "mouse_no_jitter",
+      "type": "mouse_movement",
+      "field": "jitter_amplitude",
+      "operator": "lt",
+      "threshold": 0.1,
+      "severity": 0.7,
+      "correction": "vary_parameters",
+      "correction_amount": 0,
+      "description": "No micro-jitter detected, movement too smooth for a human"
+    },
+    {
+      "name": "mouse_excessive_jitter",
+      "type": "mouse_movement",
+      "field": "jitter_amplitude",
+      "operator": "gt",
+      "threshold": 20.0,
+      "severity": 0.6,
+      "correction": "adjust_timing",
+      "correction_amount": 15,
+      "description": "Jitter amplitude too high, looks like random noise"
+    },
+    {
+      "name": "activity_too_fast",
+      "type": "activity_timing",
+      "field": "duration_ratio",
+      "operator": "lt",
+      "threshold": 0.3,
+      "severity": 0.85,
+      "correction": "slow_down",
+      "correction_amount": 40,
+      "description": "Activity completed far too quickly compared to expected duration"
+    },
+    {
+      "name": "activity_too_slow",
+      "type": "activity_timing",
+      "field": "duration_ratio",
+      "operator": "gt",
+      "threshold": 3.0,
+      "severity": 0.4,
+      "correction": "speed_up",
+      "correction_amount": 25,
+      "description": "Activity taking excessively long"
+    },
+    {
+      "name": "no_breaks_detected",
+      "type": "activity_timing",
+      "field": "time_since_break_min",
+      "operator": "gt",
+      "threshold": 120,
+      "severity": 0.65,
+      "correction": "inject_pauses",
+      "correction_amount": 300000,
+      "description": "No break in over 2 hours, unrealistic for sustained work"
+    },
+    {
+      "name": "cpu_spike_idle",
+      "type": "resource_usage",
+      "field": "cpu_percent",
+      "operator": "gt",
+      "threshold": 50.0,
+      "severity": 0.5,
+      "correction": "slow_down",
+      "correction_amount": 20,
+      "description": "CPU usage too high for light activity"
+    },
+    {
+      "name": "uniform_timing",
+      "type": "keystroke_timing",
+      "field": "ikd_stddev",
+      "operator": "lt",
+      "threshold": 5.0,
+      "severity": 0.75,
+      "correction": "vary_parameters",
+      "correction_amount": 0,
+      "description": "Keystroke timing variance too low, looks machine-generated"
+    }
+  ]
+}

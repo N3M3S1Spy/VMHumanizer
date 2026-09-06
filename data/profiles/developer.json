@@ -1,0 +1,65 @@
+{
+  "profile_name": "developer",
+  "profile_type": "software_developer",
+  "mouse": {
+    "curve_type": "cubic_bezier",
+    "smoothness": 0.9,
+    "jitter_amplitude": [2, 4],
+    "pause_on_target": true,
+    "pause_duration_range": [80, 300],
+    "speed_profile": "fast_then_slow"
+  },
+  "keystroke": {
+    "key_hold_duration": [30, 150],
+    "inter_key_delay_mean": 95,
+    "inter_key_delay_std": 30,
+    "error_rate": 0.05,
+    "word_pause_range": [40, 200],
+    "sentence_pause_range": [150, 600],
+    "digraph_timings": {
+      "th": 65,
+      "he": 70,
+      "in": 75,
+      "er": 80,
+      "an": 75,
+      "st": 70,
+      "re": 80,
+      "on": 75,
+      "//": 60,
+      "()": 55,
+      "{}": 65,
+      "->": 70,
+      "qz": 200,
+      "zx": 190
+    }
+  },
+  "registry_mru": {
+    "enable_typed_urls": true,
+    "enable_user_assist": true,
+    "enable_office_mru": true,
+    "max_urls": 20,
+    "max_office_entries": 10,
+    "include_programs": [
+      "cmd.exe",
+      "powershell.exe",
+      "notepad.exe",
+      "explorer.exe",
+      "taskmgr.exe",
+      "code.exe",
+      "devenv.exe",
+      "git.exe",
+      "node.exe",
+      "python.exe"
+    ],
+    "include_documents": [
+      "README.md",
+      "package.json",
+      "config.yml"
+    ]
+  },
+  "event_log": {
+    "enabled": true,
+    "max_events_per_log": 5000,
+    "profile_name": "developer"
+  }
+}
