@@ -1,0 +1,57 @@
+{
+  "profile_name": "office_worker",
+  "profile_type": "office_worker",
+  "mouse": {
+    "curve_type": "quadratic_bezier",
+    "smoothness": 0.75,
+    "jitter_amplitude": [3, 6],
+    "pause_on_target": true,
+    "pause_duration_range": [150, 600],
+    "speed_profile": "slow_start"
+  },
+  "keystroke": {
+    "key_hold_duration": [50, 220],
+    "inter_key_delay_mean": 140,
+    "inter_key_delay_std": 50,
+    "error_rate": 0.10,
+    "word_pause_range": [60, 350],
+    "sentence_pause_range": [250, 900],
+    "digraph_timings": {
+      "th": 85,
+      "he": 90,
+      "in": 95,
+      "er": 100,
+      "an": 90,
+      "qz": 220,
+      "zx": 210
+    }
+  },
+  "registry_mru": {
+    "enable_typed_urls": true,
+    "enable_user_assist": true,
+    "enable_office_mru": true,
+    "max_urls": 15,
+    "max_office_entries": 15,
+    "include_programs": [
+      "WINWORD.EXE",
+      "EXCEL.EXE",
+      "POWERPNT.EXE",
+      "OUTLOOK.EXE",
+      "explorer.exe",
+      "notepad.exe",
+      "calc.exe",
+      "mstsc.exe",
+      "Teams.exe"
+    ],
+    "include_documents": [
+      "Bericht_Q3.docx",
+      "Budgetplanung.xlsx",
+      "Praesentation_Meeting.pptx"
+    ]
+  },
+  "event_log": {
+    "enabled": true,
+    "max_events_per_log": 3000,
+    "profile_name": "office_worker"
+  }
+}

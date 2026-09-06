@@ -1,0 +1,56 @@
+{
+  "profile_name": "student",
+  "profile_type": "student",
+  "mouse": {
+    "curve_type": "quadratic_bezier",
+    "smoothness": 0.70,
+    "jitter_amplitude": [3, 7],
+    "pause_on_target": true,
+    "pause_duration_range": [100, 500],
+    "speed_profile": "uniform"
+  },
+  "keystroke": {
+    "key_hold_duration": [45, 200],
+    "inter_key_delay_mean": 130,
+    "inter_key_delay_std": 45,
+    "error_rate": 0.12,
+    "word_pause_range": [50, 300],
+    "sentence_pause_range": [200, 800],
+    "digraph_timings": {
+      "th": 80,
+      "he": 85,
+      "in": 90,
+      "er": 90,
+      "an": 85,
+      "qz": 210,
+      "zx": 200
+    }
+  },
+  "registry_mru": {
+    "enable_typed_urls": true,
+    "enable_user_assist": true,
+    "enable_office_mru": true,
+    "max_urls": 25,
+    "max_office_entries": 10,
+    "include_programs": [
+      "chrome.exe",
+      "WINWORD.EXE",
+      "POWERPNT.EXE",
+      "notepad.exe",
+      "explorer.exe",
+      "calc.exe",
+      "spotify.exe",
+      "discord.exe"
+    ],
+    "include_documents": [
+      "Hausarbeit_WS2026.docx",
+      "Vorlesung_Notizen.docx",
+      "Stundenplan.xlsx"
+    ]
+  },
+  "event_log": {
+    "enabled": true,
+    "max_events_per_log": 2000,
+    "profile_name": "student"
+  }
+}

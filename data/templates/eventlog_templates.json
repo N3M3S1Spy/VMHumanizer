@@ -1,0 +1,76 @@
+{
+  "events": [
+    {
+      "event_id": 4688,
+      "source": "Security",
+      "type": "Information",
+      "message_template": "New process created: {process_name} by {user}",
+      "frequency": "frequent",
+      "process_examples": ["notepad.exe", "calc.exe", "cmd.exe", "explorer.exe", "powershell.exe"]
+    },
+    {
+      "event_id": 4624,
+      "source": "Security",
+      "type": "Information",
+      "message_template": "An account was successfully logged on. Account: {user}, Logon Type: 2",
+      "frequency": "occasional"
+    },
+    {
+      "event_id": 4634,
+      "source": "Security",
+      "type": "Information",
+      "message_template": "An account was logged off. Account: {user}, Logon Type: 2",
+      "frequency": "occasional"
+    },
+    {
+      "event_id": 4720,
+      "source": "Security",
+      "type": "Information",
+      "message_template": "A user account was created. Account: {user}",
+      "frequency": "rare"
+    },
+    {
+      "event_id": 6005,
+      "source": "EventLog",
+      "type": "Information",
+      "message_template": "The Event log service was started.",
+      "frequency": "rare"
+    },
+    {
+      "event_id": 6006,
+      "source": "EventLog",
+      "type": "Information",
+      "message_template": "The Event log service was stopped.",
+      "frequency": "rare"
+    },
+    {
+      "event_id": 7036,
+      "source": "Service Control Manager",
+      "type": "Information",
+      "message_template": "The {service_name} service entered the {state} state.",
+      "frequency": "frequent"
+    },
+    {
+      "event_id": 1000,
+      "source": "Application Error",
+      "type": "Error",
+      "message_template": "Faulting application name: {process_name}, version: 10.0.19041.1",
+      "frequency": "rare",
+      "process_examples": ["explorer.exe", "svchost.exe", "dwm.exe"]
+    },
+    {
+      "event_id": 400,
+      "source": "PowerShell",
+      "type": "Information",
+      "message_template": "Engine state is changed from None to Available.",
+      "frequency": "occasional"
+    },
+    {
+      "event_id": 403,
+      "source": "PowerShell",
+      "type": "Information",
+      "message_template": "Engine state is changed from Available to Stopped.",
+      "frequency": "occasional"
+    }
+  ]
+}

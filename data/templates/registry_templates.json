@@ -1,0 +1,64 @@
+{
+  "typed_urls": {
+    "developer": [
+      "https://github.com",
+      "https://stackoverflow.com/questions",
+      "https://docs.microsoft.com",
+      "https://www.npmjs.com",
+      "https://developer.mozilla.org",
+      "https://code.visualstudio.com",
+      "https://hub.docker.com",
+      "https://www.rust-lang.org",
+      "https://cmake.org/documentation",
+      "https://learn.microsoft.com/en-us/windows/win32"
+    ],
+    "office_worker": [
+      "https://outlook.office365.com",
+      "https://teams.microsoft.com",
+      "https://sharepoint.com",
+      "https://www.google.com",
+      "https://www.linkedin.com",
+      "https://portal.azure.com",
+      "https://www.indeed.com",
+      "https://calendar.google.com",
+      "https://drive.google.com",
+      "https://www.xing.com"
+    ],
+    "student": [
+      "https://www.google.com",
+      "https://www.wikipedia.org",
+      "https://www.youtube.com",
+      "https://moodle.university.edu",
+      "https://scholar.google.com",
+      "https://www.wolframalpha.com",
+      "https://www.reddit.com",
+      "https://www.spotify.com",
+      "https://discord.com",
+      "https://www.instagram.com"
+    ]
+  },
+  "run_commands": {
+    "developer": ["cmd", "powershell", "regedit", "devmgmt.msc", "services.msc", "taskmgr", "notepad", "calc"],
+    "office_worker": ["cmd", "control", "notepad", "calc", "mstsc", "cleanmgr"],
+    "student": ["cmd", "notepad", "calc", "control", "msconfig"]
+  },
+  "office_documents": {
+    "developer": [
+      {"path": "C:\\Users\\User\\Documents\\API_Documentation.docx", "app": "Word"},
+      {"path": "C:\\Users\\User\\Documents\\Sprint_Planning.xlsx", "app": "Excel"},
+      {"path": "C:\\Users\\User\\Documents\\Architecture_Review.pptx", "app": "PowerPoint"}
+    ],
+    "office_worker": [
+      {"path": "C:\\Users\\User\\Documents\\Quartalsreport.docx", "app": "Word"},
+      {"path": "C:\\Users\\User\\Documents\\Budgetplanung_2026.xlsx", "app": "Excel"},
+      {"path": "C:\\Users\\User\\Documents\\Kundenpraesentation.pptx", "app": "PowerPoint"},
+      {"path": "\\\\fileserver\\shared\\Vorlagen\\Briefvorlage.docx", "app": "Word"},
+      {"path": "\\\\fileserver\\shared\\Berichte\\Monatsbericht.xlsx", "app": "Excel"}
+    ],
+    "student": [
+      {"path": "C:\\Users\\User\\Documents\\Hausarbeit_Informatik.docx", "app": "Word"},
+      {"path": "C:\\Users\\User\\Documents\\Notenuebersicht.xlsx", "app": "Excel"},
+      {"path": "C:\\Users\\User\\Documents\\Referat_KI.pptx", "app": "PowerPoint"}
+    ]
+  }
+}
